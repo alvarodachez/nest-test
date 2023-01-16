@@ -19,6 +19,11 @@ export class CarsController {
     return this.carsService.findAll();
   }
 
+  /**
+   *
+   * @param id Con una pipe (con parametros) que restringue que el id sea tpo uuid
+   * @returns
+   */
   @Get(':id')
   getCarById(@Param('id', new ParseUUIDPipe({ version: '4' })) id: string) {
     return this.carsService.findOneById(id);

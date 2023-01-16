@@ -32,11 +32,13 @@ export class CarsService {
   findOneById(id: string) {
     const car = this.cars.find((car) => car.id === id);
 
+    // Se lanza una excepción a nivel de nest (Zona de excepcion) la trata de forma automatica
     if (!car) throw new NotFoundException(`Car with id ${id} not found`);
 
     return car;
   }
   create(createCarDto: CreateCarDto) {
+    // '...' Asigna el resto del objeto
     const car: Car = {
       id: uuid(),
       ...createCarDto,
