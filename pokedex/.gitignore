@@ -3,6 +3,7 @@
 /node_modules
 /mongo
 .env
+package-lock.json
 # Logs
 logs
 *.log
